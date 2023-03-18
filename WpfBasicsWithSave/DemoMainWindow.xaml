@@ -1,13 +1,13 @@
 ﻿<Window
-    x:Class="WpfBasicsWithSave.MainWindow"
+    x:Class="WpfBasicsWithSave.DemoMainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WpfBasicsWithSave"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="DemoMainWindow"
     Width="500"
-    Height="450"
+    Height="500"
     FontSize="24"
     mc:Ignorable="d">
     <Grid Margin="10">
@@ -25,17 +25,18 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2">
-
-            <TextBlock>
-                Save To File Location:
-            </TextBlock>
-            <TextBox>
-                C:\FirstNameList.txt
-            </TextBox>
-
+            
+            <local:UCLabelTextBoxInput
+                x:Name="TxtUCSaveToFileLocation"
+                Title="Save To File Location:"
+                MaxLength="50"/>
             <ListView MinHeight="200" />
-            <TextBlock>Enter First Name:</TextBlock>
-            <TextBox>Michael</TextBox>
+                       
+            <local:UCLabelTextBoxInput
+                x:Name="TxtUCEnteredName"
+                Title="Enter First Name:"
+                MaxLength="15"/>
+            
             <Button>Add Name To List</Button>
         </StackPanel>
 
@@ -54,5 +55,4 @@
         </Button>
 
     </Grid>
-
 </Window>
