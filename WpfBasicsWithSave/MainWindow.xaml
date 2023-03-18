@@ -1,12 +1,51 @@
-﻿<Window x:Class="WpfBasicsWithSave.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfBasicsWithSave"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+﻿<Window
+    x:Class="WpfBasicsWithSave.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfBasicsWithSave"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="500"
+    Height="450"
+    FontSize="24"
+    mc:Ignorable="d">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2">
+
+            <TextBlock>
+                Save To File Location:
+            </TextBlock>
+            <TextBox>
+                C:\FirstNameList.txt
+            </TextBox>
+
+            <ListView MinHeight="200" />
+            <TextBlock>Enter First Name:</TextBlock>
+            <TextBox>Michael</TextBox>
+            <Button>Add Name To List</Button>
+        </StackPanel>
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="0,10,20,0">
+            Delete Name
+        </Button>
 
     </Grid>
+
 </Window>
