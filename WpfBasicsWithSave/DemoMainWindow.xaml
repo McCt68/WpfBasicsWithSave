@@ -25,19 +25,30 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2">
-            
+
             <local:UCLabelTextBoxInput
                 x:Name="TxtUCSaveToFileLocation"
                 Title="Save To File Location:"
-                MaxLength="50"/>
-            <ListView MinHeight="200" />
-                       
+                MaxLength="50" />
+            
+            <!--<ListView MinHeight="200" />-->
+            
+            <ListBox MinHeight="200" MaxHeight="200" x:Name="LstBxNames">
+                <ListBox.ContextMenu>
+                    <ContextMenu >
+                        <!--<MenuItem  Header="Change name" Name="CMchangeName" Click="CMchangeName_Click" />-->
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+
+            </ListBox>
+
+
             <local:UCLabelTextBoxInput
                 x:Name="TxtUCEnteredName"
                 Title="Enter First Name:"
-                MaxLength="15"/>
-            
-            <Button>Add Name To List</Button>
+                MaxLength="15" />
+
+            <Button x:Name="BtnAddName" Click="BtnAddName_Click">Add Name To List</Button>
         </StackPanel>
 
         <Button
