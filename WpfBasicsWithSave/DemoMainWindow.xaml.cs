@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfBasicsWithSave.Models;
 
 namespace WpfBasicsWithSave
 {
@@ -19,9 +20,14 @@ namespace WpfBasicsWithSave
     /// </summary>
     public partial class DemoMainWindow : Window
     {
+
+        SaveDataModel saveDataModel = new SaveDataModel(); 
         public DemoMainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); // I think this kinda build the WPF window ??
+
+            TxtUCSaveToFileLocation.txtLimitedInput.Text = saveDataModel.FullPath; 
+            TxtUCEnteredName.txtLimitedInput.Text = "Michael"; 
         }
     }
 }
