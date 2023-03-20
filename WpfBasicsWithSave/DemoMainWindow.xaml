@@ -30,12 +30,15 @@
                 x:Name="TxtUCSaveToFileLocation"
                 Title="Save To File Location:"
                 MaxLength="50" />
-            
+
             <!--<ListView MinHeight="200" />-->
-            
-            <ListBox MinHeight="200" MaxHeight="200" x:Name="LstBxNames">
+
+            <ListBox
+                x:Name="LstBxNames"
+                MinHeight="200"
+                MaxHeight="200">
                 <ListBox.ContextMenu>
-                    <ContextMenu >
+                    <ContextMenu>
                         <!--<MenuItem  Header="Change name" Name="CMchangeName" Click="CMchangeName_Click" />-->
                     </ContextMenu>
                 </ListBox.ContextMenu>
@@ -52,13 +55,15 @@
         </StackPanel>
 
         <Button
+            Name="BtnDelete"
             Grid.Row="1"
             Grid.Column="0"
-            Margin="0,10,20,0">
+            Margin="0,10,20,0"
+            Click="BtnDelete_Click">
             Delete Name
         </Button>
 
-        <Button
+        <Button            
             Grid.Row="1"
             Grid.Column="1"
             Margin="20,10,0,0">

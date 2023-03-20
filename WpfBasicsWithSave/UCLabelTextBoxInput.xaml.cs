@@ -26,8 +26,26 @@ namespace WpfBasicsWithSave
 
             this.DataContext = this;
         }
+       
+
+
+        // PROBERTY EXAMPLE ----- NOT USED IN TUTORIAL
+        //public string name;
+        //public string TitleWithGetSet
+        //{
+        //    get { return name; }
+        //    set
+        //    {
+        //        name = value;
+        //    }
+        //}
+        // EXAMPLE END
+
 
         // I may need to have these as nullable
+
+        // These two are auto proberty's, they have the same functionality as the example above
+        // IT automatecly creates a var called title and maxLenght ?? - Not sure about this ??
         public string Title { get; set; }
 
         public int MaxLength { get; set; }  

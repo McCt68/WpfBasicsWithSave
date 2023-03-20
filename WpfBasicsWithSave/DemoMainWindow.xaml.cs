@@ -66,5 +66,17 @@ namespace WpfBasicsWithSave
             TxtUCEnteredName.txtLimitedInput.Focus();
 
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if(LstBxNames.SelectedItem != null)
+            {
+                firstNameModels.Remove(LstBxNames.SelectedItem as NamesModel);
+            }
+
+            // Todo
+            // add popup that tells user to select an entry to delete if the user has not selected aything to delete
+            // Only give that msg if there is anything in the list to delete
+        }
     }
 }
