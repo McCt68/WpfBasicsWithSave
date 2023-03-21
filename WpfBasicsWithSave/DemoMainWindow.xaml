@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DemoMainWindow"
     Width="500"
-    Height="500"
+    Height="550"
     FontSize="24"
     mc:Ignorable="d">
     <Grid Margin="10">
@@ -39,7 +39,10 @@
                 MaxHeight="200">
                 <ListBox.ContextMenu>
                     <ContextMenu>
-                        <!--<MenuItem  Header="Change name" Name="CMchangeName" Click="CMchangeName_Click" />-->
+                        <MenuItem
+                            Name="CMchangeName"
+                            Click="CMchangeName_Click"
+                            Header="Change name" />
                     </ContextMenu>
                 </ListBox.ContextMenu>
 
@@ -63,10 +66,12 @@
             Delete Name
         </Button>
 
-        <Button            
+        <Button
+            Name="BtnSaveToFile"
             Grid.Row="1"
             Grid.Column="1"
-            Margin="20,10,0,0">
+            Margin="20,10,0,0"
+            Click="BtnSaveToFile_Click">
             Save To File
         </Button>
 
