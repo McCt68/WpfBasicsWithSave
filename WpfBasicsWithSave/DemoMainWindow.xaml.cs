@@ -66,6 +66,9 @@ namespace WpfBasicsWithSave
             // Place cursor so its ready to input another name - Not in the tutorial              
             TxtUCEnteredName.txtLimitedInput.Focus();
 
+            // Tofo
+            // check if new entry is an empty string, then don't add it
+
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -91,6 +94,9 @@ namespace WpfBasicsWithSave
                 saveDataModel.FirstNameData += $"{i+1}, {firstNameModels[i].FirstName} {Environment.NewLine}";
             }
 
+            //
+            saveDataModel.FullPath = TxtUCSaveToFileLocation.txtLimitedInput.Text;
+
             // Write to file
             File.WriteAllText(saveDataModel.FullPath, saveDataModel.FirstNameData);
 
@@ -99,7 +105,7 @@ namespace WpfBasicsWithSave
 
         }
 
-        // right click on a anme entry to change it
+        // right click on a name entry to change it
         private void CMchangeName_Click(object sender, RoutedEventArgs e)
         {
             if(LstBxNames.SelectedItem != null)
@@ -107,7 +113,7 @@ namespace WpfBasicsWithSave
                 (LstBxNames.SelectedItem as NamesModel).FirstName = TxtUCEnteredName.txtLimitedInput.Text;
             }
 
-            var inpectMe = firstNameModels;
+            
         }
     }
 }

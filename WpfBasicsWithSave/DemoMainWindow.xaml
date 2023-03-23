@@ -45,7 +45,6 @@
                             Header="Change name" />
                     </ContextMenu>
                 </ListBox.ContextMenu>
-
             </ListBox>
 
 
