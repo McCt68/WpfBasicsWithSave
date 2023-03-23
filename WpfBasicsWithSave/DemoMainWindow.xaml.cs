@@ -71,8 +71,12 @@ namespace WpfBasicsWithSave
 
         }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)            
         {
+            // this index don't exist, just using this to test for error's
+            // var errorTest = firstNameModels[1000];
+
+
             if (LstBxNames.SelectedItem != null)
             {
                 firstNameModels.Remove(LstBxNames.SelectedItem as NamesModel);
