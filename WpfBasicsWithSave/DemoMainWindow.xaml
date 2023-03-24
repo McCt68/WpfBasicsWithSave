@@ -42,7 +42,7 @@
                         <MenuItem
                             Name="CMchangeName"
                             Click="CMchangeName_Click"
-                            Header="Change name" />
+                            Header="Change name V2 with load" />
                     </ContextMenu>
                 </ListBox.ContextMenu>
             </ListBox>

@@ -31,14 +31,35 @@ namespace WpfBasicsWithSave
         {
             InitializeComponent(); // I think this kinda build the WPF window ??
 
+            // try to load from textfile
+            StreamReader streamReader = new StreamReader(@"C:\Users\mcct\OneDrive\Skrivebord\First Name.txt");
+            List<string> lines = new List<string>();
+            string line;
+            while ((line = streamReader.ReadLine()) != null)
+            {
+                // lines.Add(line);
+                firstNameModels.Add(new NamesModel() { FirstName = line });
+                //firstNameModels.Add(new NamesModel = line);
+                //firstNameModels.Add(new NamesModel() { FirstName = {line } });
+            }
+            string fileContents = streamReader.ReadToEnd(); // close my streamReader object           
+            streamReader.Close();
+
+            LstBxNames.ItemsSource = lines;
+
+
+            /////////// load test ends here
+
             TxtUCSaveToFileLocation.txtLimitedInput.Text = saveDataModel.FullPath;
-            TxtUCEnteredName.txtLimitedInput.Text = "Michael";
+            TxtUCEnteredName.txtLimitedInput.Text = "";
+
+            
 
             // fake data
-            firstNameModels.Add(new NamesModel() { FirstName = "Bente" });
-            firstNameModels.Add(new NamesModel() { FirstName = "Knud" });
-            firstNameModels.Add(new NamesModel() { FirstName = "Hanne" });
-            firstNameModels.Add(new NamesModel() { FirstName = "Irene" });
+            //firstNameModels.Add(new NamesModel() { FirstName = "Bente" });
+            //firstNameModels.Add(new NamesModel() { FirstName = "Knud" });
+            //firstNameModels.Add(new NamesModel() { FirstName = "Hanne" });
+            //firstNameModels.Add(new NamesModel() { FirstName = "Irene" });
 
             //
             LstBxNames.DisplayMemberPath = "FirstName";
@@ -109,7 +130,7 @@ namespace WpfBasicsWithSave
 
         }
 
-        // right click on a name entry to change it
+        // Right click on a name entry to change it
         private void CMchangeName_Click(object sender, RoutedEventArgs e)
         {
             if(LstBxNames.SelectedItem != null)
